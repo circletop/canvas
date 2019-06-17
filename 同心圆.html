@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas" width="700" height="700">对不起,你的浏览器不支持画布,请升级浏览器!</canvas>
+<script>
+    const canvas = document.getElementById('canvas');
+    const  ctx = canvas.getContext('2d');
+    var getRandomColor = function() {
+        return "rgba(" + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255)+','+ Math.random() + ')';
+    }
+    for(var i=0 ;i<5;i++){
+        ctx.beginPath();
+        ctx.arc(350,350,300-60*i,0,Math.PI*2,true);
+        ctx.fillStyle =getRandomColor()
+        ctx.fill()
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+
+
+</script>
+
+</body>
+</html>
